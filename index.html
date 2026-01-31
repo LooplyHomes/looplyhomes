@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looply - Buy & Sell Electronics, Furniture & Appliances Locally</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        .logo img {
+            height: 135px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .primary-btn {
+            background: #10b981;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .primary-btn:hover::before {
+            left: 100%;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
+        }
+
+        .primary-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .icon-2 { top: 60%; right: 15%; animation-delay: 1s; }
+        .icon-3 { bottom: 20%; left: 20%; animation-delay: 2s; }
+        .icon-4 { top: 30%; right: 10%; animation-delay: 1.5s; }
+
+        /* Trust Indicators */
+        .trust-bar {
+            background: #f7fafc;
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            animation: fadeInScale 0.6s ease-out forwards;
+        }
+
+        .trust-item:nth-child(1) { animation-delay: 0.2s; }
+        .trust-item:nth-child(2) { animation-delay: 0.4s; }
+        .trust-item:nth-child(3) { animation-delay: 0.6s; }
+        .trust-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s;
+        }
+
+        .trust-item:hover .trust-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .trust-text {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 16px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 70px;
+            color: #1a202c;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a202c;
+        }
+
+        .step p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: zoomIn 0.5s ease-out forwards;
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        .category-card:nth-child(5) { animation-delay: 0.5s; }
+        .category-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .category-card:hover::before {
+            left: 100%;
+        }
+
+        .category-card:hover {
+            border-color: #667eea;
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .category-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            color: #1a202c;
+            font-weight: 600;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 25px;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .benefit:nth-child(odd) { animation-name: slideInLeft; }
+        .benefit:nth-child(even) { animation-name: slideInRight; }
+        .benefit:nth-child(1) { animation-delay: 0.2s; }
+        .benefit:nth-child(2) { animation-delay: 0.3s; }
+        .benefit:nth-child(3) { animation-delay: 0.4s; }
+        .benefit:nth-child(4) { animation-delay: 0.5s; }
+        .benefit:nth-child(5) { animation-delay: 0.6s; }
+        .benefit:nth-child(6) { animation-delay: 0.7s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+        }
+
+        .benefit:hover .benefit-icon {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .benefit-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+
+        .benefit-content p {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: pulse 5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .cta-section p {
+            font-size: 22px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 22px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .whatsapp-button:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-button:hover {
+            background: #20BA5A;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-button:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .whatsapp-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 25px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .trust-items {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .primary-btn, .whatsapp-button {
+                padding: 18px 40px;
+                font-size: 18px;
+            }
+
+            .floating-icon {
+                font-size: 40px;
+            }
+
+            .logo img {
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="image.png" alt="Looply Logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="floating-icon icon-1">📺</div>
+        <div class="floating-icon icon-2">🛋️</div>
+        <div class="floating-icon icon-3">💻</div>
+        <div class="floating-icon icon-4">❄️</div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Give Your Electronics & Furniture a Second Life</h1>
+                <p>Buy and sell trusted household items at fair prices—right in your neighborhood. TVs, laptops, sofas, fridges, and more.</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/7062355340?text=Hi%20Looply!%20I'm%20interested%20in%20buying/selling%20items" class="primary-btn" target="_blank">
+                        <span>💬</span> Message Us on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <div class="trust-text">Quality-Checked Items</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">📍</div>
+                    <div class="trust-text">Local & Nearby</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💰</div>
+                    <div class="trust-text">Fair Market Prices</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🤝</div>
+                    <div class="trust-text">Trusted Community</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Looply Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>Message us on WhatsApp with what you're looking to buy or sell</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Match You</h3>
+                    <p>We connect buyers and sellers in your local area with verified listings</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Meet & Exchange</h3>
+                    <p>Complete the deal locally—safe, simple, and convenient</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">What You Can Buy & Sell</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📺</div>
+                    <h3>TVs & Electronics</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3>Laptops & Computers</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧺</div>
+                    <h3>Washing Machines</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">❄️</div>
+                    <h3>Refrigerators</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🛋️</div>
+                    <h3>Sofas & Chairs</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🛏️</div>
+                    <h3>Beds & Mattresses</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Looply?</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">🏘️</div>
+                    <div class="benefit-content">
+                        <h3>Stay Local</h3>
+                        <p>No shipping hassles. Meet nearby, inspect items in person, and complete exchanges quickly.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">💵</div>
+                    <div class="benefit-content">
+                        <h3>Save Money</h3>
+                        <p>Get quality household items at fair prices. Save money while being environmentally conscious.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">♻️</div>
+                    <div class="benefit-content">
+                        <h3>Reduce Waste</h3>
+                        <p>Keep perfectly usable items out of landfills. Give electronics and furniture a second life.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🔒</div>
+                    <div class="benefit-content">
+                        <h3>Transparent & Safe</h3>
+                        <p>Quality-checked listings, clear pricing, and local meetups make every exchange trustworthy.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-content">
+                        <h3>Quick & Simple</h3>
+                        <p>No complex apps or listings. Just message us, and we'll handle the matching.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-content">
+                        <h3>Community First</h3>
+                        <p>Build connections in your neighborhood while exchanging items you need and decluttering responsibly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 style="margin-bottom: 15px;">Join the Loop</h2>
+                <p style="margin-bottom: 50px;">Be the first to access our premium marketplace. Tell us what you're looking for!</p>
+                
+                <div class="form-wrapper" style="max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <form id="interestForm" onsubmit="return handleFormSubmit(event);">
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="name" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: white;">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Jane Doe" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.9); border: 2px solid transparent; border-radius: 12px; font-size: 16px; transition: all 0.3s; color: #2d3748;">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="phone" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: white;">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.9); border: 2px solid transparent; border-radius: 12px; font-size: 16px; transition: all 0.3s; color: #2d3748;">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 30px;">
+                            <label for="interest" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: white;">I am interested in...</label>
+                            <select id="interest" name="interest" style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.9); border: 2px solid transparent; border-radius: 12px; font-size: 16px; transition: all 0.3s; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width=%2714%27 height=%278%27 viewBox=%270 0 14 8%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M1 1L7 7L13 1%27 stroke=%27%23666%27 stroke-width=%272%27 stroke-linecap=%27round%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 18px center; padding-right: 45px; color: #2d3748;">
+                                <option value="buying">Buying Items</option>
+                                <option value="selling">Selling Items</option>
+                                <option value="both">Both Buying & Selling</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="whatsapp-button" style="width: 100%; justify-content: center;" id="submitBtn">
+                            <span>🚀</span> Get Early Access
+                        </button>
+                    </form>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8; color: white;">We respect your privacy. No spam, ever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p><strong>Looply</strong> - Local exchange platform for electronics, home appliances, and furniture</p>
+                <p>Starting in your neighborhood. More locations coming soon.</p>
+            </div>
+            <p>&copy; 2026 Looply. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log('JavaScript loaded successfully');
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log('✅ Form submission intercepted!');
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<span>⏳</span> Submitting...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            
+            console.log('📝 Form Data:', { name, phone, interest });
+            
+            // Prepare data
+            const timestamp = new Date().toISOString();
+            const referrer = document.referrer || 'Direct';
+            const userAgent = navigator.userAgent;
+            const device = /Mobile|Android|iPhone/i.test(userAgent) ? 'Mobile' : 'Desktop';
+            
+            const formData = {
+                timestamp: timestamp,
+                name: name,
+                phone: phone,
+                interest: interest,
+                referrer: referrer,
+                device: device
+            };
+            
+            console.log('📦 Sending data:', formData);
+            
+            // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzsDgLZWZ0CBUcSTiYTeNnFgkLEaOUvF4WEi9kdLRAAow2VIIEnmaGps46oDjuFmDvuSg/exec';
+            
+            console.log('🎯 Sending to:', scriptURL);
+            
+            // Send to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                mode: 'no-cors'
+            })
+            .then(() => {
+                console.log('✅ Data sent to Google Sheets!');
+                
+                // Show success
+                submitBtn.innerHTML = '<span>✓</span> Success!';
+                submitBtn.style.background = '#10b981';
+                
+                // Create WhatsApp message
+                const message = `Hi Looply! I'd like to join the loop.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AInterested in: ${encodeURIComponent(interest)}`;
+                
+                setTimeout(() => {
+                    console.log('📱 Opening WhatsApp...');
+                    window.open(`https://wa.me/7062355340?text=${message}`, '_blank');
+                    
+                    // Reset form
+                    document.getElementById('interestForm').reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '#25D366';
+                    submitBtn.disabled = false;
+                }, 1500);
+            })
+            .catch(error => {
+                console.error('❌ Error:', error);
+                
+                // Still open WhatsApp even if Google Sheets fails
+                const message = `Hi Looply! I'd like to join the loop.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AInterested in: ${encodeURIComponent(interest)}`;
+                
+                window.open(`https://wa.me/7062355340?text=${message}`, '_blank');
+                
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '#25D366';
+                submitBtn.disabled = false;
+            });
+            
+            return false;
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Input focus effects
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#10b981';
+                this.style.background = 'rgba(255,255,255,1)';
+            });
+            input.addEventListener('blur', function() {
+                this.style.borderColor = 'transparent';
+                this.style.background = 'rgba(255,255,255,0.9)';
+            });
+        });
+
+        console.log('🎉 All scripts initialized!');
+    </script>
+</body>
+</html>
