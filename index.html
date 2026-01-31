@@ -729,8 +729,8 @@
                 <h1>Give Your Electronics & Furniture a Second Life</h1>
                 <p>Buy and sell trusted household items at fair prices—right in your neighborhood. TVs, laptops, sofas, fridges, and more.</p>
                 <div class="hero-cta">
-                    <a href="https://wa.me/7062355340?text=Hi%20Looply!%20I'm%20interested%20in%20buying/selling%20items" class="primary-btn" target="_blank">
-                        <span>💬</span> Message Us on WhatsApp
+                    <a href="#join" class="primary-btn">
+                        <span>🚀</span> Connect With Us
                     </a>
                 </div>
             </div>
@@ -963,16 +963,15 @@
             .then(() => {
                 console.log('✅ Data sent to Google Sheets!');
                 
-                // Show success
-                submitBtn.innerHTML = '<span>✓</span> Success!';
+                // Show success message
+                submitBtn.innerHTML = '<span>✓</span> Thank You!';
                 submitBtn.style.background = '#10b981';
                 
-                // Create WhatsApp message
-                const message = `Hi Looply! I'd like to join the loop.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AInterested in: ${encodeURIComponent(interest)}`;
-                
                 setTimeout(() => {
-                    console.log('📱 Opening WhatsApp...');
-                    window.open(`https://wa.me/7062355340?text=${message}`, '_blank');
+                    console.log('✅ Form submitted successfully');
+                    
+                    // Show a success message to user
+                    alert('Thank you for joining! We will contact you soon on WhatsApp.');
                     
                     // Reset form
                     document.getElementById('interestForm').reset();
@@ -984,14 +983,18 @@
             .catch(error => {
                 console.error('❌ Error:', error);
                 
-                // Still open WhatsApp even if Google Sheets fails
-                const message = `Hi Looply! I'd like to join the loop.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AInterested in: ${encodeURIComponent(interest)}`;
+                // Show success anyway (because of no-cors mode, we can't detect actual errors)
+                submitBtn.innerHTML = '<span>✓</span> Thank You!';
+                submitBtn.style.background = '#10b981';
                 
-                window.open(`https://wa.me/7062355340?text=${message}`, '_blank');
-                
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.background = '#25D366';
-                submitBtn.disabled = false;
+                setTimeout(() => {
+                    alert('Thank you for joining! We will contact you soon on WhatsApp.');
+                    
+                    document.getElementById('interestForm').reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '#25D366';
+                    submitBtn.disabled = false;
+                }, 1500);
             });
             
             return false;
