@@ -38,14 +38,8 @@
         }
 
         @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .header-content {
@@ -66,19 +60,11 @@
             transition: transform 0.3s ease;
         }
 
-        .logo img:hover {
-            transform: scale(1.05);
-        }
+        .logo img:hover { transform: scale(1.05); }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Hero Section */
@@ -103,18 +89,11 @@
         }
 
         @keyframes moveBackground {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(50px, 50px);
-            }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+        .hero-content { position: relative; z-index: 1; }
 
         .hero h1 {
             font-size: 52px;
@@ -135,19 +114,11 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-cta {
-            animation: fadeInUp 0.8s ease-out 0.7s both;
-        }
+        .hero-cta { animation: fadeInUp 0.8s ease-out 0.7s both; }
 
         .primary-btn {
             background: #10b981;
@@ -169,35 +140,19 @@
         .primary-btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.6s;
         }
 
-        .primary-btn:hover::before {
-            left: 100%;
-        }
+        .primary-btn:hover::before { left: 100%; }
+        .primary-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5); }
+        .primary-btn:active { transform: translateY(-2px) scale(1.02); }
 
-        .primary-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
-        }
-
-        .primary-btn:active {
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        /* Floating Animation */
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .floating-icon {
@@ -240,19 +195,12 @@
         .trust-item:nth-child(4) { animation-delay: 0.8s; }
 
         @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .trust-icon {
-            width: 50px;
-            height: 50px;
+            width: 50px; height: 50px;
             background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 50%;
             display: flex;
@@ -265,23 +213,11 @@
             transition: all 0.3s;
         }
 
-        .trust-item:hover .trust-icon {
-            transform: rotate(360deg) scale(1.1);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-        }
-
-        .trust-text {
-            font-weight: 600;
-            color: #2d3748;
-            font-size: 16px;
-        }
+        .trust-item:hover .trust-icon { transform: rotate(360deg) scale(1.1); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); }
+        .trust-text { font-weight: 600; color: #2d3748; font-size: 16px; }
 
         /* How It Works */
-        .how-it-works {
-            padding: 100px 0;
-            background: white;
-            position: relative;
-        }
+        .how-it-works { padding: 100px 0; background: white; position: relative; }
 
         .section-title {
             text-align: center;
@@ -330,25 +266,14 @@
         .step:nth-child(3) { animation-delay: 0.6s; }
 
         @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
-        }
+        .step:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2); background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%); }
 
         .step-number {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
@@ -362,28 +287,12 @@
             transition: all 0.3s;
         }
 
-        .step:hover .step-number {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-        }
-
-        .step h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #1a202c;
-        }
-
-        .step p {
-            color: #4a5568;
-            font-size: 16px;
-            line-height: 1.7;
-        }
+        .step:hover .step-number { transform: scale(1.1) rotate(5deg); box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4); }
+        .step h3 { font-size: 24px; margin-bottom: 15px; color: #1a202c; }
+        .step p { color: #4a5568; font-size: 16px; line-height: 1.7; }
 
         /* Categories */
-        .categories {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-        }
+        .categories { padding: 100px 0; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); }
 
         .category-grid {
             display: grid;
@@ -413,59 +322,28 @@
         .category-card:nth-child(6) { animation-delay: 0.6s; }
 
         @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .category-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
             transition: left 0.5s;
         }
 
-        .category-card:hover::before {
-            left: 100%;
-        }
+        .category-card:hover::before { left: 100%; }
+        .category-card:hover { border-color: #667eea; transform: translateY(-10px) scale(1.03); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2); }
 
-        .category-card:hover {
-            border-color: #667eea;
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .category-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .category-card:hover .category-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        .category-card h3 {
-            font-size: 18px;
-            color: #1a202c;
-            font-weight: 600;
-        }
+        .category-icon { font-size: 60px; margin-bottom: 20px; display: inline-block; transition: all 0.3s; }
+        .category-card:hover .category-icon { transform: scale(1.2) rotate(5deg); }
+        .category-card h3 { font-size: 18px; color: #1a202c; font-weight: 600; }
 
         /* Benefits */
-        .benefits {
-            padding: 100px 0;
-            background: white;
-        }
+        .benefits { padding: 100px 0; background: white; }
 
         .benefits-grid {
             display: grid;
@@ -490,30 +368,17 @@
         .benefit:nth-child(6) { animation-delay: 0.7s; }
 
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .benefit-icon {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 16px;
             display: flex;
@@ -526,21 +391,9 @@
             transition: all 0.3s;
         }
 
-        .benefit:hover .benefit-icon {
-            transform: rotate(10deg) scale(1.1);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-        }
-
-        .benefit-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a202c;
-        }
-
-        .benefit-content p {
-            color: #4a5568;
-            line-height: 1.8;
-        }
+        .benefit:hover .benefit-icon { transform: rotate(10deg) scale(1.1); box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4); }
+        .benefit-content h3 { font-size: 22px; margin-bottom: 10px; color: #1a202c; }
+        .benefit-content p { color: #4a5568; line-height: 1.8; }
 
         /* CTA Section */
         .cta-section {
@@ -555,56 +408,31 @@
         .cta-section::before {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 300px; height: 300px;
             background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
             border-radius: 50%;
-            top: -100px;
-            right: -100px;
+            top: -100px; right: -100px;
             animation: pulse 4s ease-in-out infinite;
         }
 
         .cta-section::after {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 400px; height: 400px;
             background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
             border-radius: 50%;
-            bottom: -150px;
-            left: -150px;
+            bottom: -150px; left: -150px;
             animation: pulse 5s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.8;
-            }
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
         }
 
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .cta-section p {
-            font-size: 22px;
-            margin-bottom: 50px;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-section h2 { font-size: 48px; margin-bottom: 20px; font-weight: 700; animation: fadeInUp 0.8s ease-out; }
+        .cta-section p { font-size: 22px; margin-bottom: 50px; opacity: 0.95; animation: fadeInUp 0.8s ease-out 0.2s both; }
 
         .whatsapp-button {
             background: #25D366;
@@ -629,32 +457,16 @@
         .whatsapp-button::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.6s;
         }
 
-        .whatsapp-button:hover::before {
-            left: 100%;
-        }
-
-        .whatsapp-button:hover {
-            background: #20BA5A;
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5);
-        }
-
-        .whatsapp-button:active {
-            transform: translateY(-4px) scale(1.02);
-        }
-
-        .whatsapp-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+        .whatsapp-button:hover::before { left: 100%; }
+        .whatsapp-button:hover { background: #20BA5A; transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 45px rgba(37, 211, 102, 0.5); }
+        .whatsapp-button:active { transform: translateY(-4px) scale(1.02); }
+        .whatsapp-button:disabled { opacity: 0.7; cursor: not-allowed; }
 
         /* Footer */
         footer {
@@ -664,46 +476,185 @@
             text-align: center;
         }
 
-        .footer-content {
-            margin-bottom: 25px;
-            animation: fadeIn 0.8s ease-out;
+        .footer-content { margin-bottom: 25px; animation: fadeIn 0.8s ease-out; }
+        .footer-content p { margin-bottom: 10px; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
         }
 
-        .footer-content p {
-            margin-bottom: 10px;
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
         }
+
+        .footer-links a:hover { color: #ffffff; text-decoration: underline; }
+
+        /* ==============================
+           PRIVACY POLICY MODAL
+        ============================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: #ffffff;
+            border-radius: 20px;
+            max-width: 760px;
+            width: 100%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-header {
+            padding: 28px 32px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .modal-header p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover { background: rgba(255,255,255,0.35); }
+
+        .modal-body {
+            padding: 32px;
+            overflow-y: auto;
+            flex: 1;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 28px 0 10px;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .modal-body h3:first-child { margin-top: 0; }
+
+        .modal-body p { margin-bottom: 12px; color: #4a5568; font-size: 15px; }
+
+        .modal-body ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .modal-body ul li {
+            color: #4a5568;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .modal-body strong { color: #2d3748; }
+
+        .modal-body a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .modal-body a:hover { text-decoration: underline; }
+
+        .privacy-effective {
+            background: #f0f4ff;
+            border: 1px solid #c3d0ff;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 24px;
+        }
+
+        .modal-footer {
+            padding: 16px 32px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .modal-footer button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 36px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .modal-footer button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .trust-items {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .primary-btn, .whatsapp-button {
-                padding: 18px 40px;
-                font-size: 18px;
-            }
-
-            .floating-icon {
-                font-size: 40px;
-            }
-
-            .logo img {
-                height: 80px;
-            }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .section-title { font-size: 32px; }
+            .trust-items { flex-direction: column; align-items: flex-start; }
+            .primary-btn, .whatsapp-button { padding: 18px 40px; font-size: 18px; }
+            .floating-icon { font-size: 40px; }
+            .logo img { height: 80px; }
+            .modal-body { padding: 20px; }
+            .modal-header { padding: 20px; }
         }
     </style>
 </head>
@@ -893,7 +844,10 @@
                             <span>🚀</span> Get Early Access
                         </button>
                     </form>
-                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8; color: white;">We respect your privacy. No spam, ever.</p>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8; color: white;">
+                        We respect your privacy. No spam, ever. 
+                        <a href="#" onclick="openPrivacyModal(); return false;" style="color: rgba(255,255,255,0.9); text-decoration: underline;">Privacy Policy</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -904,20 +858,139 @@
             <div class="footer-content">
                 <p><strong>Looply</strong> - Local exchange platform for electronics, home appliances, and furniture</p>
                 <p>Starting in your neighborhood. More locations coming soon.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="openPrivacyModal(); return false;">🔒 Privacy Policy</a>
+                    <a href="mailto:looplyhomes@gmail.com">✉️ looplyhomes@gmail.com</a>
+                </div>
             </div>
             <p>&copy; 2026 Looply. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- ============================
+         PRIVACY POLICY MODAL
+    ============================= -->
+    <div class="modal-overlay" id="privacyModal" onclick="handleOverlayClick(event)">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h2>🔒 Privacy Policy</h2>
+                    <p>Looply Homes — Effective Date: 28/03/2026</p>
+                </div>
+                <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="privacy-effective">
+                    Welcome to Looply Homes. Your privacy is important to us. This Privacy Policy explains how Looply Homes ("we," "our," or "us") collects, uses, shares, and protects your information when you use our platform.
+                </div>
+
+                <h3>1. Information We Collect</h3>
+                <p><strong>a. Personal Information</strong></p>
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Location / address</li>
+                    <li>Account login details</li>
+                </ul>
+                <p><strong>b. Transaction Information</strong></p>
+                <ul>
+                    <li>Details of appliances you buy or sell</li>
+                </ul>
+                <p><strong>c. Usage Data</strong></p>
+                <ul>
+                    <li>Pages visited</li>
+                    <li>Time spent on the site</li>
+                    <li>Device and browser type</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Create and manage your account</li>
+                    <li>Facilitate buying and reselling of home appliances</li>
+                    <li>Communicate with you about transactions or updates</li>
+                    <li>Improve our services and user experience</li>
+                    <li>Ensure safety and prevent fraud</li>
+                </ul>
+
+                <h3>3. Sharing Your Information</h3>
+                <p>We may share your information with:</p>
+                <ul>
+                    <li>Other users (e.g., buyers/sellers for transaction purposes)</li>
+                    <li>Service providers (e.g., payment processors, hosting providers)</li>
+                    <li>Legal authorities if required by law</li>
+                </ul>
+                <p>We do <strong>not sell your personal data</strong> to third parties.</p>
+
+                <h3>4. Data Security</h3>
+                <p>We take reasonable measures to protect your information. However, data security is also subject to Google's infrastructure and policies.</p>
+
+                <h3>5. Third-Party Services</h3>
+                <p>Looply Homes may use third-party services (e.g., Google Forms, Google Maps, payment gateways). These services have their own privacy policies, and we are not responsible for their practices.</p>
+
+                <h3>6. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Request corrections or updates</li>
+                    <li>Request deletion of your data</li>
+                    <li>Withdraw consent where applicable</li>
+                </ul>
+                <p>To exercise your rights, contact us at: <a href="mailto:looplyhomes@gmail.com">looplyhomes@gmail.com</a></p>
+
+                <h3>7. Cookies and Tracking</h3>
+                <p>We may use cookies or similar technologies to enhance user experience and analyze site usage.</p>
+
+                <h3>8. Children's Privacy</h3>
+                <p>Our platform is not intended for users under the age of 18. We do not knowingly collect personal information from children.</p>
+
+                <h3>9. Changes to This Policy</h3>
+                <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date.</p>
+
+                <h3>10. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+                <strong>Email:</strong> <a href="mailto:looplyhomes@gmail.com">looplyhomes@gmail.com</a></p>
+
+                <p style="margin-top: 24px; padding: 16px; background: #f7fafc; border-radius: 10px; font-size: 14px; color: #4a5568;">
+                    By using Looply Homes, you agree to the terms outlined in this Privacy Policy.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closePrivacyModal()">I Understand</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         console.log('JavaScript loaded successfully');
+
+        // Privacy Modal
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleOverlayClick(event) {
+            if (event.target === document.getElementById('privacyModal')) {
+                closePrivacyModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePrivacyModal();
+        });
 
         // Form submission handler
         function handleFormSubmit(event) {
             event.preventDefault();
             event.stopPropagation();
-            
-            console.log('✅ Form submission intercepted!');
             
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
@@ -925,55 +998,30 @@
             submitBtn.innerHTML = '<span>⏳</span> Submitting...';
             submitBtn.disabled = true;
             
-            // Get form data
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const interest = document.getElementById('interest').value;
             
-            console.log('📝 Form Data:', { name, phone, interest });
-            
-            // Prepare data
             const timestamp = new Date().toISOString();
             const referrer = document.referrer || 'Direct';
             const userAgent = navigator.userAgent;
             const device = /Mobile|Android|iPhone/i.test(userAgent) ? 'Mobile' : 'Desktop';
             
-            const formData = {
-                timestamp: timestamp,
-                name: name,
-                phone: phone,
-                interest: interest,
-                referrer: referrer,
-                device: device
-            };
+            const formData = { timestamp, name, phone, interest, referrer, device };
             
-            console.log('📦 Sending data:', formData);
-            
-            // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzsDgLZWZ0CBUcSTiYTeNnFgkLEaOUvF4WEi9kdLRAAow2VIIEnmaGps46oDjuFmDvuSg/exec';
             
-            console.log('🎯 Sending to:', scriptURL);
-            
-            // Send to Google Sheets
             fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 mode: 'no-cors'
             })
             .then(() => {
-                console.log('✅ Data sent to Google Sheets!');
-                
-                // Show success message
                 submitBtn.innerHTML = '<span>✓</span> Thank You!';
                 submitBtn.style.background = '#10b981';
                 
                 setTimeout(() => {
-                    console.log('✅ Form submitted successfully');
-                    
-                    // Show a success message to user
                     alert('Thank you for joining! We will contact you soon on WhatsApp.');
-                    
-                    // Reset form
                     document.getElementById('interestForm').reset();
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.background = '#25D366';
@@ -981,15 +1029,12 @@
                 }, 1500);
             })
             .catch(error => {
-                console.error('❌ Error:', error);
-                
-                // Show success anyway (because of no-cors mode, we can't detect actual errors)
+                console.error('Error:', error);
                 submitBtn.innerHTML = '<span>✓</span> Thank You!';
                 submitBtn.style.background = '#10b981';
                 
                 setTimeout(() => {
                     alert('Thank you for joining! We will contact you soon on WhatsApp.');
-                    
                     document.getElementById('interestForm').reset();
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.background = '#25D366';
@@ -1003,11 +1048,11 @@
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
@@ -1022,8 +1067,6 @@
                 this.style.background = 'rgba(255,255,255,0.9)';
             });
         });
-
-        console.log('🎉 All scripts initialized!');
     </script>
 </body>
 </html>
